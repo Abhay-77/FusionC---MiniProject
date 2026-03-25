@@ -1,4 +1,4 @@
-# FusionC — Intelligent Multi-Language Compiler
+# FusionC - Intelligent Multi-Language Compiler
 
 FusionC is a teaching-friendly compiler pipeline that can parse, semantically check, lower to three-address code, run a constant-folding optimizer, and interpret the program. Current support covers a subset of C (single function, declarations, assignments, arithmetic, returns) and the provided CustomLang sample grammar.
 
