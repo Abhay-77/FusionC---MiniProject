@@ -3,6 +3,7 @@
 FusionC is a teaching-friendly compiler pipeline that can parse, semantically check, lower to three-address code, run a constant-folding optimizer, and interpret the program. Current support covers a subset of C (single function, declarations, assignments, arithmetic, returns) and the provided CustomLang sample grammar.
 
 ## Capabilities
+
 - Language detection (extension + optional hint)
 - Lexical analysis ([frontend/lexer/token.cpp](frontend/lexer/token.cpp))
 - Parsing to AST with functions/blocks/returns ([frontend/parser/ast.cpp](frontend/parser/ast.cpp))
@@ -23,6 +24,7 @@ FusionC is a teaching-friendly compiler pipeline that can parse, semantically ch
 8) **Execution** — TAC interpreter; reports exit code
 
 ## Project Layout (key files)
+
 - Entry: [main.cpp](main.cpp)
 - CLI: [fusionc_cli/cli_parser.cpp](fusionc_cli/cli_parser.cpp)
 - Controller: [core/compiler_controller.cpp](core/compiler_controller.cpp)
@@ -58,6 +60,7 @@ Remove-Item Env:FUSIONC_DISABLE_AI
 ```
 
 ## Build (Windows)
+
 Requires CMake and MSVC build tools.
 
 ```powershell
@@ -107,11 +110,13 @@ Observe the printed exit code from the interpreter at the end.
 - Adjust or extend grammar/semantics in `frontend/` and update TAC builder/optimizer/backend accordingly.
 
 ## Limitations / Next Steps
-- Only arithmetic expressions, declarations, assignments, and returns; no control flow yet.
+
+- Only arithmetic expressions, declarations, assignments, and simple loops (`while`, `for`); no conditionals or complex control flow yet.
 - Backend is an interpreter, not native codegen; can be replaced with real code generation later.
 - Type system is minimal (int-focused) and does not yet validate function params.
 
 ## Troubleshooting
+
 - `cmake` not found: reinstall CMake and add to PATH.
 - Build fails for missing MSVC: install Visual Studio Build Tools (C++ workload).
 - Unexpected language detection: pass the `<language>` hint (`c` or `custom`).
